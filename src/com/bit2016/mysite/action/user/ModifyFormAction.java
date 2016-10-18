@@ -28,10 +28,10 @@ public class ModifyFormAction implements Action {
 		// userVo.setGender("male");
 		// userVo.setEmail("111");
 		// --------------------------------------------------------------------------------------------
-		userVo.setNo(userVo.getNo());
-		userVo.setName(userVo.getName());
-		userVo.setGender(userVo.getGender());
-		userVo.setEmail(userVo.getEmail());
+//		userVo.setNo(userVo.getNo());
+//		userVo.setName(userVo.getName());
+//		userVo.setGender(userVo.getGender());
+//		userVo.setEmail(userVo.getEmail());
 
 		request.setAttribute("userVo", userVo);
 

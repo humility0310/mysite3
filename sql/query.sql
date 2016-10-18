@@ -15,6 +15,7 @@ DELETE FROM USERS;
 COMMIT;
 
 SELECT * FROM USERS;
+select * FROM GUESTBOOK;
 
 --select
 

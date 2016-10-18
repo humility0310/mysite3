@@ -37,8 +37,9 @@
 					</table>
 				</form>
 				<ul>
-					<li><c:set var="count" value="${fn:length(list) }" /> <c:forEach
-							items="${list }" var="vo" varStatus="status">
+					<c:set var="count" value="${fn:length(list) }" />
+					<c:forEach items="${list }" var="vo" varStatus="status">
+						<li>
 							<table width="510" border="1">
 								<tr>
 									<td>[${count-status.index }]</td>
@@ -49,8 +50,9 @@
 								<tr>
 									<td colspan="4">${fn:replace(vo.content, newLine, "<br>") }</td>
 								</tr>
-							</table>
-						</c:forEach> <br></li>
+							</table> <br>
+						</li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>
