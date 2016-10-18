@@ -15,7 +15,7 @@ public class DeleteformAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// deleteform 요청 처리
 
-		WebUtil.forword(request, response, "/WEB-INF/views/deleteform.jsp");
+		WebUtil.forword(request, response, "/WEB-INF/views/guestbook/deleteform.jsp");
 
 	}
 

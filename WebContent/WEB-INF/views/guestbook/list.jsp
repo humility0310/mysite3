@@ -44,7 +44,7 @@
 									<td>[${count-status.index }]</td>
 									<td>${vo.name }</td>
 									<td>${vo.reg_day }</td>
-									<td><a href="/guestbook3/gb?a=deleteform&no=${vo.no }">삭제</a></td>
+									<td><a href="/mysite3/guestbook?a=deleteform&no=${vo.no }">삭제</a></td>
 								</tr>
 								<tr>
 									<td colspan="4">${fn:replace(vo.content, newLine, "<br>") }</td>

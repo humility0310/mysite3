@@ -28,7 +28,7 @@ public class DeleteAction implements Action {
 		dao.delete(vo);
 
 		// 리다이렉트
-		WebUtil.redirect(request, response, "/guestbook3/gb");
+		WebUtil.redirect(request, response, "/mysite3/guestbook");
 
 	}
 

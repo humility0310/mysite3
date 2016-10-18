@@ -23,7 +23,7 @@
 					<input type="hidden" name="a" value="modify" /> <input
 						type="hidden" name="no" value="${userVo.no}" /> <label
 						class="block-label" for="name">이름</label> <input id="name"
-						name="name" type="text" value="${userVo.name}" > <label
+						name="name" type="text" value="${userVo.name}"> <label
 						class="block-label" for="email">이메일</label> <strong>${userVo.email}</strong>
 					<label class="block-label">패스워드</label> <input name="password"
 						type="password" value="">
@@ -58,4 +58,9 @@
 		<jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 	</div>
 </body>
+<c:if test="${'success' == param.update }">
+	<script>
+		alert("성공적으로 수정되었습니다.");
+	</script>
+</c:if>
 </html>

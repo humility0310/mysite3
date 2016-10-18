@@ -13,7 +13,7 @@ public class MainAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		WebUtil.forword(request, response, "WEB-INF/views/main/index.jsp");
+		WebUtil.forword(request, response, "/WEB-INF/views/main/index.jsp");
 
 	}
 

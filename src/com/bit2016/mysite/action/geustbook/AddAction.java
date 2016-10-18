@@ -29,7 +29,7 @@ public class AddAction implements Action {
 		dao.insert(vo);
 
 		// 리다이렉트
-		response.sendRedirect("/guestbook3/gb");
+		response.sendRedirect("/mysite3/guestbook");
 
 	}
 
