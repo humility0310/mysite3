@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bit2016.mysite.dao.UserDao;
 import com.bit2016.mysite.vo.UserVo;
@@ -33,7 +34,9 @@ public class ModifyAction implements Action {
 
 		UserDao dao = new UserDao();
 		dao.modify(vo);
-
+		
+		HttpSession session = request.getSession(true);
+		session.setAttribute("authUser", vo);
 		WebUtil.redirect(request, response, "/mysite3/user?a=modifysuccess");
 	}
 

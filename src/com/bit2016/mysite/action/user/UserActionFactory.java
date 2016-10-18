@@ -1,5 +1,6 @@
 package com.bit2016.mysite.action.user;
 
+import com.bit2016.geustbook.action.ListAction;
 import com.bit2016.mysite.action.main.MainAction;
 import com.bit2016.web.Action;
 import com.bit2016.web.ActionFactory;
@@ -28,6 +29,8 @@ public class UserActionFactory extends ActionFactory {
 			action = new ModifyAction();
 		}else if ("modifysuccess".equals(actionName)) {
 			action = new ModifySuccessAction();
+		}else if ("list".equals(actionName)) {
+			action = new ListAction();
 		} else {
 			action = new MainAction();
 		}
