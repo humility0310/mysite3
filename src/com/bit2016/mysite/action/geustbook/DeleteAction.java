@@ -1,4 +1,4 @@
-package com.bit2016.geustbook.action;
+package com.bit2016.mysite.action.geustbook;
 
 import java.io.IOException;
 
@@ -6,8 +6,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bit2016.guestbook.dao.GuestBookDao;
-import com.bit2016.guestbook.vo.GuestBookVo;
+import com.bit2016.mysite.dao.GuestBookDao;
+import com.bit2016.mysite.vo.GuestBookVo;
 import com.bit2016.web.Action;
 import com.bit2016.web.util.WebUtil;
 

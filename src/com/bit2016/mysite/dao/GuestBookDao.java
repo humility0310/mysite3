@@ -1,4 +1,4 @@
-package com.bit2016.guestbook.dao;
+package com.bit2016.mysite.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bit2016.guestbook.vo.GuestBookVo;
+import com.bit2016.mysite.vo.GuestBookVo;
 
 public class GuestBookDao {
 

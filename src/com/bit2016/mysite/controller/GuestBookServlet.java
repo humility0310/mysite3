@@ -1,4 +1,4 @@
-package com.bit2016.guestbook.controller;
+package com.bit2016.mysite.controller;
 
 import java.io.IOException;
 
@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bit2016.geustbook.action.GuestbookActionFactory;
+import com.bit2016.mysite.action.geustbook.GuestbookActionFactory;
 import com.bit2016.web.Action;
 import com.bit2016.web.ActionFactory;
 
-@WebServlet("/gb")
+@WebServlet("/guestbook")
 public class GuestBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

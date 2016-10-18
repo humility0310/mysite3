@@ -1,4 +1,4 @@
-package com.bit2016.guestbook.vo;
+package com.bit2016.mysite.vo;
 
 public class GuestBookVo {
 	private Long no;

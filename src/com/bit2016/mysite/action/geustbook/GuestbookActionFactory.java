@@ -1,4 +1,4 @@
-package com.bit2016.geustbook.action;
+package com.bit2016.mysite.action.geustbook;
 
 import com.bit2016.web.Action;
 import com.bit2016.web.ActionFactory;
