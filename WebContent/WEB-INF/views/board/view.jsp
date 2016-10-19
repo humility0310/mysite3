@@ -19,23 +19,22 @@
 						<th colspan="2">글보기</th>
 					</tr>
 					<tr>
-						<td class="label">${vo.title }</td>
-						<td>${title }</td>
+						<td class="label">제목</td>
+						<td>${boardvo.title } </td>
 					</tr>
 					<tr>
 						<td class="label">내용</td>
 						<td>
 							<div class="view-content">
-								내용 1입니다.<br>
-								내용 2입니다.<br>
-								내용 3입니다.
+								${boardvo.content }
 							</div>
 						</td>
 					</tr>
 				</table>
 				<div class="bottom">
 					<a href="">글목록</a>
-					<a href="">글수정</a>
+					<c:if test="${authUser.no ==boardvo.users_no }"><a href="">글수정</a></c:if>
+					
 				</div>
 			</div>
 		</div>

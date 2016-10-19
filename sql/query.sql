@@ -1,3 +1,6 @@
+SELECT title, content, USERS_NO from BOARD WHERE no=1;
+
+
 --user
 --insert
 

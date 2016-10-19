@@ -27,8 +27,8 @@ public class BoardListAction implements Action {
 		BoardDao dao = new BoardDao();
 		List<BoardVo> list = dao.getList(1l);
 
-		request.setAttribute("pagecount", dao.pageCount());
-		request.setAttribute("pagecounter", 1l);
+//		request.setAttribute("pagecount", dao.pageCount());
+//		request.setAttribute("pagecounter", 1l);
 		request.setAttribute("list", list);
 
 		// 리다이렉트

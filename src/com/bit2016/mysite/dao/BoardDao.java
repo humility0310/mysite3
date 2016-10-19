@@ -37,7 +37,7 @@ public class BoardDao {
 		
 		try {
 			conn = getConnection();
-			String sql = "SELECT title, content from BOARD WHERE no=?";
+			String sql = "SELECT title, content, USERS_NO from BOARD WHERE no=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setLong(1, board_no);
 
@@ -47,11 +47,13 @@ public class BoardDao {
 
 				String title = rs.getString(1);
 				String content = rs.getString(2);
+				Long USERS_NO = rs.getLong(3);
 				
 				vo = new BoardVo();
 				vo.setNo(board_no);
 				vo.setTitle(title);
 				vo.setContent(content);
+				vo.setUsers_no(USERS_NO);
 				}
 
 		} catch (SQLException e) {
