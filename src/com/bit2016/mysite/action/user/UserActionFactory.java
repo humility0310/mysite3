@@ -1,6 +1,6 @@
 package com.bit2016.mysite.action.user;
 
-import com.bit2016.mysite.action.geustbook.ListAction;
+import com.bit2016.mysite.action.guestbook.ListAction;
 import com.bit2016.mysite.action.main.MainAction;
 import com.bit2016.web.Action;
 import com.bit2016.web.ActionFactory;
