@@ -44,7 +44,8 @@
 						<td>${vo.user_name }</td>
 						<td>${vo.hit }</td>
 						<td>${vo.reg_date }</td>
-						<td><a href="" class="del">삭제</a></td>
+						<c:if test="${vo.users_no==authUser.no }"><td><a href="" class="del">삭제</a></td></c:if>
+						
 					</tr>
 					</c:forEach>
 				</table>
@@ -58,10 +59,11 @@
 						<li>5</li>
 						<li><a href="">▶</a></li>
 					</ul>
-				</div>				
+				</div>	
+				<c:if test="${authUser.no != null }">		
 				<div class="bottom">
 					<a href="/mysite3/board?a=write" id="new-book">글쓰기</a>
-				</div>				
+				</div>		</c:if>			
 			</div>
 		</div>
 		<c:import url="/WEB-INF/views/includes/navigation.jsp">

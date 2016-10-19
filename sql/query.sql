@@ -1,5 +1,5 @@
 SELECT title, content, USERS_NO from BOARD WHERE no=1;
-
+INSERT INTO BOARD VALUES(board_seq.NEXTVAL, 'title', 'content', reg_date, hit, group_no, order_no, depth, users_no)
 
 --user
 --insert
@@ -65,7 +65,8 @@ SELECT *
                hit,
                reg_date,
                name,
-			   depth
+			   depth,
+			   users_no
           FROM (  SELECT a.no,
                          a.title,
                          a.hit,

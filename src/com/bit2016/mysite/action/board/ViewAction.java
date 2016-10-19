@@ -1,7 +1,6 @@
 package com.bit2016.mysite.action.board;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
