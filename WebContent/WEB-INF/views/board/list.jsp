@@ -24,75 +24,43 @@
 						<th>제목</th>
 						<th>글쓴이</th>
 						<th>조회수</th>
-						<th>작성일</th>
+						<th>작성일[${pagecount }]</th>
 						<th>&nbsp;</th>
-					</tr>				
+					</tr>
+					<c:set var="count" value="${fn:length(list) }" />
+					<c:forEach items="${list }" var="vo" varStatus="status">				
 					<tr>
-						<td>5</td>
-						<td class="left">
-							<a href="">세 번째 글입니다.</a>
-						</td>
-						<td>안대혁</td>
-						<td>3</td>
-						<td>2015-10-11 12:04:20</td>
+						<td>[${count-status.index }]</td>
+						<c:choose>
+						<c:when test="${vo.depth > 0 }">
+						<td class="left" style="padding-left:${20*vo.depth}px">
+						<img src="${pageContext.request.contextPath }/assets/images/reply.png">
+						<a href="">${vo.title }</a></td>
+						</c:when>
+						<c:otherwise>
+						<td class="left"><a href="${pageContext.request.contextPath }/board?a=view&board_no=${vo.no }">${vo.title }</a></td>
+						</c:otherwise>
+						</c:choose>
+						<td>${vo.user_name }</td>
+						<td>${vo.hit }</td>
+						<td>${vo.reg_date }</td>
 						<td><a href="" class="del">삭제</a></td>
 					</tr>
-					<tr>
-						<td>4</td>
-						<td class="left">
-							<a href="">두 번째 글입니다.</a>
-						</td>
-						<td>안대혁</td>
-						<td>3</td>
-						<td>2015-10-02 12:04:12</td>
-						<td><a href="" class="del">삭제</a></td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td class="left" style="padding-left:20px">
-							<img src="${pageContext.request.contextPath }/assets/images/reply.png">
-							<a href="">두 번째 글의 답글 입니다.</a>
-						</td>
-						<td>안대혁</td>
-						<td>3</td>
-						<td>2015-10-02 12:04:12</td>
-						<td><a href="" class="del">삭제</a></td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td class="left" style="padding-left:40px">
-							<img src="${pageContext.request.contextPath }/assets/images/reply.png">
-							<a href="">답글의 답글 입니다.</a>
-						</td>
-						<td>안대혁</td>
-						<td>3</td>
-						<td>2015-10-02 12:04:12</td>
-						<td><a href="" class="del">삭제</a></td>
-					</tr>
-					<tr>
-						<td>1</td>
-						<td class="left">
-							<a href="">첫 번째 글입니다.</a>
-						</td>
-						<td>안대혁</td>
-						<td>3</td>
-						<td>2015-09-25 07:24:32</td>
-						<td><a href="" class="del">삭제</a></td>
-					</tr>
+					</c:forEach>
 				</table>
 				<div class="pager">
 					<ul>
 						<li><a href="">◀</a></li>
-						<li><a href="">1</a></li>
-						<li><a href="">2</a></li>
-						<li class="selected">3</li>
-						<li><a href="">4</a></li>
-						<li><a href="">5</a></li>
+						<li><a href="/mysite3/board?page=1">1</a></li>
+						<li><a href="/mysite3/board?page=2">2</a></li>
+						<li class="/mysite3/board?page=3">3</li>
+						<li>4</li>
+						<li>5</li>
 						<li><a href="">▶</a></li>
 					</ul>
 				</div>				
 				<div class="bottom">
-					<a href="" id="new-book">글쓰기</a>
+					<a href="/mysite3/board?a=write" id="new-book">글쓰기</a>
 				</div>				
 			</div>
 		</div>

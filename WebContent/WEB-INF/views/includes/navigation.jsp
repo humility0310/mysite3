@@ -23,7 +23,7 @@
 			<c:when test="${param.menu == 'board' }">
 				<li><a href="/mysite3/main">김영조</a></li>
 				<li><a href="/mysite3/guestbook">방명록</a></li>
-				<li class="selected"><a href="/mysite3/board">게시판</a></li>
+				<li class="selected"><a href="/mysite3/board"'>게시판</a></li>
 
 			</c:when>
 			<c:otherwise>

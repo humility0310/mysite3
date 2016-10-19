@@ -42,7 +42,7 @@
 				</form>
 			</div>
 		</div>
-		<jsp:include page="/WEB-INF/views/includes/nevigation.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/includes/navigation.jsp"></jsp:include>
 		<jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 	</div>
 </body>
