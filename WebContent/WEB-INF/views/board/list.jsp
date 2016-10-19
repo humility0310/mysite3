@@ -24,7 +24,7 @@
 						<th>제목</th>
 						<th>글쓴이</th>
 						<th>조회수</th>
-						<th>작성일[${pagecount }]</th>
+						<th>작성일</th>
 						<th>&nbsp;</th>
 					</tr>
 					<c:set var="count" value="${fn:length(list) }" />
@@ -35,7 +35,7 @@
 						<c:when test="${vo.depth > 0 }">
 						<td class="left" style="padding-left:${20*vo.depth}px">
 						<img src="${pageContext.request.contextPath }/assets/images/reply.png">
-						<a href="">${vo.title }</a></td>
+						<a href="${pageContext.request.contextPath }/board?a=view&board_no=${vo.no }">${vo.title }</a></td>
 						</c:when>
 						<c:otherwise>
 						<td class="left"><a href="${pageContext.request.contextPath }/board?a=view&board_no=${vo.no }">${vo.title }</a></td>

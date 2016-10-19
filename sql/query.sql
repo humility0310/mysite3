@@ -1,6 +1,8 @@
 --user
 --insert
 
+SELECT title, content from BOARD WHERE no=3;
+
 INSERT INTO USERS
      VALUES (user_seq.NEXTVAL,
              '김영조',
