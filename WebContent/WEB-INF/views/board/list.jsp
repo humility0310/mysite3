@@ -44,7 +44,7 @@
 						<td>${vo.user_name }</td>
 						<td>${vo.hit }</td>
 						<td>${vo.reg_date }</td>
-						<c:if test="${vo.users_no==authUser.no }"><td><a href="/mysite3/board?a=delete&no=${vo.no }" class="del">삭제</a></td></c:if>
+						<td><c:if test="${vo.users_no==authUser.no }"><a href="/mysite3/board?a=delete&no=${vo.no }" class="del">삭제</a></c:if></td>
 						
 					</tr>
 					</c:forEach>

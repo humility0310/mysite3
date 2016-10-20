@@ -27,6 +27,33 @@ public class BoardDao {
 		return conn;
 	}
 
+	public void hit(Long board_no) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		try {
+			conn = getConnection();
+			String sql = "UPDATE BOARD SET HIT=hit+1 WHERE NO=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, board_no);
+
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("error :" + e);
+		} finally {
+			try {
+				if (conn != null) {
+					conn.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+			} catch (Exception e2) {
+				System.out.println("error2 :" + e2);
+			}
+		}
+	}
+
 	public BoardVo getView(long board_no) {
 
 		BoardVo vo = null;

@@ -4,7 +4,8 @@ SELECT title, content, USERS_NO
 
 SELECT * from BOARD ;
 
-
+UPDATE BOARD SET HIT=hit+1 WHERE NO=13;
+commit;
 --user
 --insert
 
