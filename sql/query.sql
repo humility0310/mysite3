@@ -2,14 +2,15 @@ SELECT title, content, USERS_NO
   FROM BOARD
  WHERE no = 1;
 
-INSERT INTO BOARD VALUES(board_seq.NEXTVAL, 'title', 'content', reg_date, hit, group_no, order_no, depth, users_no)
 
 --user
 --insert
 
 SELECT title, content from BOARD WHERE no=3;
 
-
+SELECT * FROM BOARD;
+UPDATE BOARD SET TITLE = '바꿈', CONTENT='바꿈' WHERE no = 17;
+commit;
 
 INSERT INTO USERS
      VALUES (user_seq.NEXTVAL,

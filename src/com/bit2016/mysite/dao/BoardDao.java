@@ -81,10 +81,38 @@ public class BoardDao {
 	//
 	// }
 	//
-	// private void modify() {
-	//
-	// }
-	//
+	public void modify(BoardVo vo) {
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+
+		try {
+			conn = getConnection();
+
+			String sql = "UPDATE BOARD SET TITLE = ?, CONTENT=? WHERE no = ?";
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setString(1, vo.getTitle());
+			pstmt.setString(2, vo.getContent());
+			pstmt.setLong(3, vo.getNo());
+
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println("error :" + e);
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+				System.out.println("error :" + e2);
+			}
+		}
+	}
 
 	public void write(BoardVo vo) {
 		Connection conn = null;

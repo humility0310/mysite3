@@ -11,7 +11,18 @@ public class Test {
 		// getListTest();
 		// pageCountTest();
 		// viewTest();
-		writeTest();
+		// writeTest();
+		modifyTest();
+	}
+
+	public static void modifyTest() {
+		BoardDao dao = new BoardDao();
+		BoardVo vo = new BoardVo();
+		vo.setNo(17l);
+		vo.setTitle("묵데이터1");
+		vo.setContent("묵데이터 내용");
+		dao.modify(vo);
+
 	}
 
 	public static void writeTest() {
