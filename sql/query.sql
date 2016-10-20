@@ -2,6 +2,8 @@ SELECT title, content, USERS_NO
   FROM BOARD
  WHERE no = 1;
 
+SELECT * from BOARD ;
+
 
 --user
 --insert

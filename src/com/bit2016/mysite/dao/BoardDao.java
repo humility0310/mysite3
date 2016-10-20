@@ -36,22 +36,31 @@ public class BoardDao {
 
 		try {
 			conn = getConnection();
-			String sql = "SELECT title, content, USERS_NO from BOARD WHERE no=?";
+			String sql = "SELECT * from BOARD WHERE no=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setLong(1, board_no);
 
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-
-				String title = rs.getString(1);
-				String content = rs.getString(2);
-				Long USERS_NO = rs.getLong(3);
+				String title = rs.getString(2);
+				String content = rs.getString(3);
+				String date = rs.getString(4);
+				Long hit = rs.getLong(5);
+				Long group = rs.getLong(6);
+				Long order = rs.getLong(7);
+				Long depth = rs.getLong(8);
+				Long USERS_NO = rs.getLong(9);
 
 				vo = new BoardVo();
 				vo.setNo(board_no);
 				vo.setTitle(title);
 				vo.setContent(content);
+				vo.setReg_date(date);
+				vo.setHit(hit);
+				vo.setGroup_no(group);
+				vo.setOrder_no(order);
+				vo.setDepth(depth);
 				vo.setUsers_no(USERS_NO);
 			}
 
@@ -145,17 +154,30 @@ public class BoardDao {
 		try {
 			conn = getConnection();
 
-			String sql = "INSERT INTO BOARD VALUES(board_seq.NEXTVAL, ?, ?, sysdate, ?,  NVL ( (SELECT MAX (group_no) FROM BOARD), 0) + 1,?, ?, ?)";
+			if (vo.getGroup_no() == null) {
+				String sql = "INSERT INTO BOARD VALUES(board_seq.NEXTVAL, ?, ?, sysdate, ?,  NVL ( (SELECT MAX (group_no) FROM BOARD), 0) + 1,?, ?, ?)";
 
-			pstmt = conn.prepareStatement(sql);
+				pstmt = conn.prepareStatement(sql);
 
-			pstmt.setString(1, vo.getTitle());
-			pstmt.setString(2, vo.getContent());
-			pstmt.setLong(3, vo.getHit());
-			pstmt.setLong(4, vo.getOrder_no());
-			pstmt.setLong(5, vo.getDepth());
-			pstmt.setLong(6, vo.getUsers_no());
+				pstmt.setString(1, vo.getTitle());
+				pstmt.setString(2, vo.getContent());
+				pstmt.setLong(3, vo.getHit());
+				pstmt.setLong(4, vo.getOrder_no());
+				pstmt.setLong(5, vo.getDepth());
+				pstmt.setLong(6, vo.getUsers_no());
+			} else {
+				String sql = "INSERT INTO BOARD VALUES(board_seq.NEXTVAL, ?, ?, sysdate, ?,  ?,?, ?, ?)";
 
+				pstmt = conn.prepareStatement(sql);
+
+				pstmt.setString(1, vo.getTitle());
+				pstmt.setString(2, vo.getContent());
+				pstmt.setLong(3, vo.getHit());
+				pstmt.setLong(4, vo.getGroup_no());
+				pstmt.setLong(5, vo.getOrder_no());
+				pstmt.setLong(6, vo.getDepth());
+				pstmt.setLong(7, vo.getUsers_no());
+			}
 			pstmt.executeUpdate();
 
 		} catch (SQLException e) {
