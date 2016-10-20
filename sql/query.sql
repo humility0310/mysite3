@@ -9,6 +9,9 @@ SELECT title, content, USERS_NO
 SELECT title, content from BOARD WHERE no=3;
 
 SELECT * FROM BOARD;
+
+DELETE FROM BOARD WHERE NO = 17;
+
 UPDATE BOARD SET TITLE = '바꿈', CONTENT='바꿈' WHERE no = 17;
 commit;
 

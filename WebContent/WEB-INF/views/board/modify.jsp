@@ -16,7 +16,7 @@
 		<c:import url="/WEB-INF/views/includes/header.jsp"></c:import>
 		<div id="content">
 			<div id="board">
-				<form class="board-form" method="post" action="/mysite3/board"">
+				<form class="board-form" method="post" action="/mysite3/board">
 				<input type = "hidden" name = "a" value="modify">
 				<input type = "hidden" name = "no" value="${vo.no }">
 					<table class="tbl-ex">

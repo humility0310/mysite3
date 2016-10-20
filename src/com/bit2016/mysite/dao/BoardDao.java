@@ -27,7 +27,6 @@ public class BoardDao {
 		return conn;
 	}
 
-	//
 	public BoardVo getView(long board_no) {
 
 		BoardVo vo = null;
@@ -76,11 +75,37 @@ public class BoardDao {
 		return vo;
 	}
 
-	//
-	// private void delete() {
-	//
-	// }
-	//
+	public void delete(Long no) {
+		PreparedStatement pstmt = null;
+		Connection conn = null;
+
+		try {
+			conn = getConnection();
+
+			String sql = "DELETE FROM BOARD WHERE NO = ?";
+
+			pstmt = conn.prepareStatement(sql);
+
+			pstmt.setLong(1, no);
+
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println("error :" + e);
+		} finally {
+			try {
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+				System.out.println("error :" + e2);
+			}
+		}
+	}
+
 	public void modify(BoardVo vo) {
 		PreparedStatement pstmt = null;
 		Connection conn = null;
