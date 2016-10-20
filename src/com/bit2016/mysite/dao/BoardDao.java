@@ -92,14 +92,14 @@ public class BoardDao {
 		try {
 			conn = getConnection();
 
-			String sql = "INSERT INTO BOARD VALUES(board_seq.NEXTVAL, ?, ?, sysdate, ?, ?, NVL ( (SELECT MAX (group_no) FROM BOARD), 0) + 1, ?, ?)";
+			String sql = "INSERT INTO BOARD VALUES(board_seq.NEXTVAL, ?, ?, sysdate, ?,  NVL ( (SELECT MAX (group_no) FROM BOARD), 0) + 1,?, ?, ?)";
 
 			pstmt = conn.prepareStatement(sql);
 
 			pstmt.setString(1, vo.getTitle());
 			pstmt.setString(2, vo.getContent());
 			pstmt.setLong(3, vo.getHit());
-			pstmt.setLong(4, vo.getGroup_no());
+			pstmt.setLong(4, vo.getOrder_no());
 			pstmt.setLong(5, vo.getDepth());
 			pstmt.setLong(6, vo.getUsers_no());
 

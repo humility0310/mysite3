@@ -1,10 +1,15 @@
-SELECT title, content, USERS_NO from BOARD WHERE no=1;
+SELECT title, content, USERS_NO
+  FROM BOARD
+ WHERE no = 1;
+
 INSERT INTO BOARD VALUES(board_seq.NEXTVAL, 'title', 'content', reg_date, hit, group_no, order_no, depth, users_no)
 
 --user
 --insert
 
 SELECT title, content from BOARD WHERE no=3;
+
+
 
 INSERT INTO USERS
      VALUES (user_seq.NEXTVAL,
@@ -65,16 +70,16 @@ SELECT *
                hit,
                reg_date,
                name,
-			   depth,
-			   users_no
+               DEPTH,
+               users_no
           FROM (  SELECT a.no,
                          a.title,
                          a.hit,
                          TO_CHAR (a.reg_date, 'yyyy-mm-dd hh:mi:ss')
                             AS reg_date,
                          b.NAME,
-						 a.users_no,
-						 a.depth
+                         a.users_no,
+                         a.DEPTH
                     FROM BOARD a, USERS b
                    WHERE a.USERS_NO = b.NO
                 --AND title LIKE '%kwd%' OR CONTENT LIKE '%kwd%'
@@ -100,6 +105,17 @@ INSERT INTO BOARD
      VALUES (board_seq.NEXTVAL,
              '점심?',
              '점심!',
+             SYSDATE,
+             0,
+             NVL ( (SELECT MAX (group_no) FROM BOARD), 0) + 1,
+             1,
+             0,
+             21);
+
+INSERT INTO BOARD
+     VALUES (board_seq.NEXTVAL,
+             '새글1',
+             '새글1',
              SYSDATE,
              0,
              NVL ( (SELECT MAX (group_no) FROM BOARD), 0) + 1,

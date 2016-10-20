@@ -31,14 +31,14 @@ public class WriteAction implements Action {
 		vo.setTitle(title);
 		vo.setContent(content);
 		vo.setHit(0l);
-		vo.setGroup_no(0l);
+		vo.setOrder_no(0l);
 		vo.setDepth(0l);
 		vo.setUsers_no(userVo.getNo());
 
 		BoardDao dao = new BoardDao();
 		dao.write(vo);
-		//WebUtil.redirect(request, response, "/WEB-INF/views/board/list.jsp");
-		WebUtil.forword(request, response, "/WEB-INF/views/board/write.jsp");
+		WebUtil.redirect(request, response, "/mysite3/board");
+//		WebUtil.forword(request, response, "/WEB-INF/views/board/write.jsp");
 	}
 
 }
